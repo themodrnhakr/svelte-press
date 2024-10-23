@@ -19,6 +19,11 @@
 </div>
 
 <style>
+	:root {
+		--base-color: linear-gradient(125deg, #ffffff, #ffffff);
+		--overlay-color: linear-gradient(125deg, #0000001A, #00000000);
+	}
+
 	.wrapper {
 		width: 100%;
 		height: 100%;
@@ -35,7 +40,6 @@
 
 	.grid-wrapper {
 		--grid-size: calc(9.5rem + var(--vpx)/0.5);
-		--widget-color: linear-gradient(145deg, #f9f9f9, #ffffff);
 		display: grid;
 		grid-gap: 1rem;
 		grid-template-columns: repeat(auto-fit, minmax(var(--grid-size), 1fr));
@@ -65,7 +69,7 @@
 	  bottom: 0;
 	  left: 0;
 	  border-radius: 1.75rem;
-		background: linear-gradient(145deg, #f4f4f4, #ffffff);
+		background: linear-gradient(145deg, #0000001F, #0000000D, #00000000);
 		box-shadow:  5px 5px 10px #ebebeb,
 		     -5px -5px 10px #ffffff;
 		     -5px -5px 10px #ffffff;
@@ -81,21 +85,25 @@
 
 	.grid-wrapper > :global(.widget.size1) {
 		grid-column: span 1;
-		background: var(--widget-color), linear-gradient(125deg, rgba( 185, 70, 67, 50%), rgba( 185, 70, 67, 50%))
+		background-image: var(--overlay-color), var(--base-color); 
 	}
 
 	.grid-wrapper > :global(.widget.size2) {
+		--widget-color: var(--overlay-color), var(--base-color);
 		grid-column: span 2;
+		background: var(--widget-color); 
 	}
 
 	.grid-wrapper > :global(.widget.size3) {
 		grid-column: span 2;
 		grid-row: span 2;
+		background: var(--overlay-color), var(--base-color); 
 	}
 
 	.grid-wrapper > :global(.widget.size4) {
 		grid-column: span 2;
 		grid-row: span 4;
+		background: var(--overlay-color), var(--base-color); 
 	}
 
 	@media (min-width: 700px) {
