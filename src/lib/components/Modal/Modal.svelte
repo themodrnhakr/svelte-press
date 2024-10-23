@@ -1,7 +1,7 @@
 <script  lang="ts">
 	import { createDialog, melt } from "@melt-ui/svelte"
 
-	let { title: modalTitle = "{title here}", description: modalDescription = "{description here}" } = $props();
+	let { children, title: modalTitle = "{title here}", description: modalDescription = "{description here}" } = $props();
 
 	const {
 		elements: { trigger, portalled, overlay, content, title, description, close },
@@ -15,8 +15,9 @@
 	<div use:melt={$portalled}>
 		<div use:melt={$overlay} class="overlay blur"></div>
 		<div use:melt={$content} class="content card">
-			<h1 use:melt={$title} class="heading">{modalTitle}</h1>
-			<p use:melt={$description} class="text">{modalDescription}</p>
+			{#if (title !== false)} <h1 use:melt={$title} class="heading">{modalTitle}</h1> {/if}
+			{#if (description !== false)} <p use:melt={$description} class="text">{modalDescription}</p> {/if}
+			{@render children()}
 			<button use:melt={$close}>Close</button>
 		</div>
 	</div>

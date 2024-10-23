@@ -2,6 +2,7 @@
 	import Dashboard from "$lib/components/Dashboard/Dashboard.svelte"
 	import Widget from "$lib/components/Widget/Widget.svelte"
 	import WidgetsReference from "$lib/components/Widget/WidgetsReference.svelte"
+	import Modal from "$lib/components/Modal/Modal.svelte"
 
 	let modalVisible = false;
 	let modalInfo = {}
@@ -18,47 +19,48 @@
 		{ 
 			name: "article-count",
 			properties: {
-					size: 1
+					size: 1,
+					style: "simple number",
 				}
 		},
 		{ 
-			name: "published-article-count",
+			name: "article-count-published",
 			properties: {
 					size: 1
 				}
 		},
 		{ 
-			name: "draft-article-count",
+			name: "article-count-draft",
 			properties: {
-					size: 3
+					size: 1
 				}
 		},
 		{ 
-			name: "",
+			name: "article-count-all",
 			properties: {
 					size: 2
 				}
 		},
 		{ 
-			name: "",
+			name: "article-list",
+			properties: {
+					size: 4
+				}
+		},
+		{ 
+			name: "user-count",
 			properties: {
 					size: 1
 				}
 		},
 		{ 
-			name: "",
-			properties: {
-					size: 3
-				}
-		},
-		{ 
-			name: "",
+			name: "user-count-active",
 			properties: {
 					size: 1
 				}
 		},
 		{ 
-			name: "",
+			name: "user-list",
 			properties: {
 					size: 4
 				}
@@ -88,6 +90,11 @@
 	<Widget />
 
 	{#snippet head()}
+
+		<Modal title="Widget Reference" description="false">
+			<WidgetsReference {widgets} />
+		</Modal>
+
 	{/snippet}
 
 	{#snippet widget(items)}
@@ -102,10 +109,7 @@
 </Dashboard>
 
 {#snippet modal(item)}
-	<dialog open class="modal-open">
 	<Widget />
-	{item}
-	</dialog>
 {/snippet}
 
 {#if modalVisible}
