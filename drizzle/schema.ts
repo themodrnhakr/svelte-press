@@ -1,4 +1,4 @@
-import { sqliteTable, AnySQLiteColumn, integer, text } from "drizzle-orm/sqlite-core"
+import { sqliteTable, AnySQLiteColumn, integer, text, uniqueIndex, foreignKey } from "drizzle-orm/sqlite-core"
   import { sql } from "drizzle-orm"
 
 export const authors = sqliteTable("authors", {
@@ -9,11 +9,28 @@ export const authors = sqliteTable("authors", {
 	middlePreference: integer("middle_preference"),
 });
 
+export const users = sqliteTable("users", {
+	id: text().primaryKey().notNull(),
+	email: text(),
+	passwordHash: text("password_hash"),
+},
+(table) => {
+	return {
+		emailUnique: uniqueIndex("users_email_unique").on(table.email),
+	}
+});
+
+export const sessions = sqliteTable("sessions", {
+	id: text().primaryKey().notNull(),
+	userId: text("user_id").notNull().references(() => users.id),
+	expiresAt: integer("expires_at").notNull(),
+});
+
 export const posts = sqliteTable("posts", {
 	id: integer().primaryKey().notNull(),
 	title: text().notNull(),
 	subtitle: text(),
-	authorId: integer("author_id"),
+	authorId: integer("author_id").references(() => authors.id),
 	body: text(),
 });
 

@@ -6,7 +6,7 @@ export const posts = sqliteTable('posts', {
 	id: integer('id').primaryKey(),
 	title: text().notNull('title'),
 	subtitle: text('subtitle'),
-	authorId: integer('author_id'),
+	authorId: integer('author_id').references(() => authors.id),
 	body: text('body', { mode: 'json' })
 });
 

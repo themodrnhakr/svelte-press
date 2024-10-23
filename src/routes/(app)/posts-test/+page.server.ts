@@ -1,5 +1,5 @@
 import { posts } from '/src/lib/db/schema/posts';
-import { db } from '/src/lib/db/db';
+import { db } from '$lib/db/db';
 import type { PageServerLoad } from './$types';
 import { postsData } from '$lib/server/getPosts';
 

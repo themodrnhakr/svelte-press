@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Modal from "$lib/components/Modal/Modal.svelte"
 	import type { PageServerData } from "./$types";
 	let { data }: PageServerData = $props();
 	$inspect(data);
@@ -21,7 +22,11 @@
 
 <div id="test"></div>
 
+<p contenteditable="true" class="text">test</p>
+
 </div>
+
+<Modal />
 
 <style>
 	#article {

@@ -3,6 +3,7 @@
 @import "./fonts.app.css";
 
 :root {
+	font-family: 'Montserrat';
 }
 
 *, *::before, *::after {

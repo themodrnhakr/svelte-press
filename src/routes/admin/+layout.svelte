@@ -1,9 +1,8 @@
 <script>
-	import '../app.css'
+	import '/src/app.css'
 </script>
 
 <nav>
-	<h2><a href="/posts-test">Posts</a></h2>
 </nav>
 
 <slot />
