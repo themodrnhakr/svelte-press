@@ -1,10 +1,16 @@
 <script>
+	import { dev } from '$app/environment'
 	import '/src/app.css'
 </script>
 
 <nav>
-	<h2><a href="/posts-test">Posts</a></h2>
+	<h2><a href="/blog">Blog</a></h2>
+	<h2><a href="/posts-test">Test-Post</a></h2>
 </nav>
+
+{#if dev}
+	<div class="dev"><span>devmode</span></div>
+{/if}
 
 <slot />
 
@@ -20,5 +26,22 @@
 
 	a {
 		color: black;
+	}
+
+	.dev {
+		content: "";
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		left: 0;
+		right: 0;
+		background: red;
+		opacity: 0.25;
+		pointer-events: none;
+	}
+
+	.dev > span {
+		text-align: center;
+		color: white;
 	}
 </style>

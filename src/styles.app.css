@@ -6,10 +6,18 @@
 .title {
 	--title-size: min(calc(2rem + var(--vu) + var(--vpx)), 100px);
 	font-family: "Montserrat";
-	font-weight: 600;
+	font-weight: 300;
 	font-size: var(--title-size);
 	text-transform: lowercase;
 	line-height: var(--title-size);
+}
+
+.subtitle {
+	--subtitle-size: min(calc(1rem + var(--vu) + var(--vpx)*0.5), 80px);
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: var(--subtitle-size);
+	line-height: calc(var(--subtitle-size)/0.75);
 }
 
 .author {

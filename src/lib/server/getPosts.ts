@@ -1,6 +1,7 @@
 import { posts } from '/src/lib/db/schema/posts';
 import { db } from '/src/lib/db/db';
 import { marked } from 'marked';
+import { eq } from 'drizzle-orm';
 
 const renderer = {
 	heading({ tokens, depth }) {
@@ -31,5 +32,13 @@ function outputConstructor(array) {
 }
 
 const result = await db.select().from(posts);
+async function resultOne(slug) {
+	const result = await db.select().from(posts).where(eq(posts.slug, slug));
+	return result;
+}
 
 export const postsData = outputConstructor(result);
+export async function postsDataSingle(slug) {
+	const data = await resultOne(slug);
+	return outputConstructor(data);
+}
