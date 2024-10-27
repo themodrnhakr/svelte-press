@@ -3,7 +3,7 @@
 
 
 	let { widgets } = $props()
-	const widgetsSorted = widgets.sort((a, b) => a.name - b.name)
+	const widgetsSorted = widgets.sort((a, b) => a.name.localeCompare(b.name))
 	const {
 		elements: { root, content, viewport, corner, scrollbarY, thumbY },
 	} = createScrollArea({

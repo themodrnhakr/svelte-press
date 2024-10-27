@@ -33,7 +33,6 @@
 	
 	.dashboard {
 		margin: auto;
-		border: dotted;
 		max-width: 2000px
 	
 	}

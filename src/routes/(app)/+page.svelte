@@ -25,7 +25,7 @@
 		height: 100vh;
 		width: 100vw;
 		padding: 10rem;
-		background: no-repeat top/70% url("pngtree-man-with-a-straight-beard-and-mustache-picture-image_3122808.jpg"), black;
+		background: no-repeat top/70% url("/pngtree-man-with-a-straight-beard-and-mustache-picture-image_3122808.jpg"), black;
 	}
 	
 	#title {
@@ -38,6 +38,6 @@
 	#logo {
 		height: 12rem;
 		width: 12rem;
-		background: no-repeat center/100% url("circle-white.png");
+		background: no-repeat center/100% url("/circle-white.png");
 	}
 </style>

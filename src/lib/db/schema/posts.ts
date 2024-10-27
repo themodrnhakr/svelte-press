@@ -4,9 +4,10 @@ import { authors } from './authors';
 
 export const posts = sqliteTable('posts', {
 	id: integer('id').primaryKey(),
-	title: text().notNull('title'),
+	title: text('title').notNull(),
 	subtitle: text('subtitle'),
 	authorId: integer('author_id').references(() => authors.id),
+	slug: text('slug'),
 	body: text('body', { mode: 'json' })
 });
 

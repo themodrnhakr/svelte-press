@@ -12,11 +12,14 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
+		"@faker-js/faker": "^9.0.3",
+		"@flydotio/dockerfile": "^0.5.9",
 		"@fontsource/fira-mono": "^5.1.0",
 		"@melt-ui/pp": "^0.3.2",
 		"@melt-ui/svelte": "^0.83.0",
 		"@neoconfetti/svelte": "^2.2.1",
 		"@sveltejs/adapter-auto": "^3.2.5",
+		"@sveltejs/adapter-node": "^5.2.8",
 		"@sveltejs/kit": "^2.7.2",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.8",
 		"@types/better-sqlite3": "^7.6.11",
