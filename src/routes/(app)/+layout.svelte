@@ -4,6 +4,7 @@
 </script>
 
 <nav>
+	<h2><a href="/">Home</a></h2>
 	<h2><a href="/blog">Blog</a></h2>
 	<h2><a href="/posts-test">Test-Post</a></h2>
 </nav>
