@@ -1,5 +1,5 @@
-import { posts } from '/src/lib/db/schema/posts';
-import { db } from '/src/lib/db/db';
+import { posts } from '/src/lib/server/db/schema/posts';
+import { db } from '/src/lib/server/db/db';
 import { marked } from 'marked';
 import { eq } from 'drizzle-orm';
 

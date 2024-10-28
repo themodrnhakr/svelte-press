@@ -2,8 +2,8 @@ import { lucia } from '$lib/server/auth/auth';
 import { fail, redirect } from '@sveltejs/kit';
 import { generateIdFromEntropySize } from 'lucia';
 import { hash } from '@node-rs/argon2';
-import { db } from '$lib/db/db';
-import { users } from '$lib/db/schema/auth';
+import { db } from '$lib/server/db/db';
+import { users } from '$lib/server/db/schema/auth';
 
 import type { Actions } from './$types';
 
