@@ -1,7 +1,7 @@
-<script lang='ts'>
-	import type { PageServerLoad } from "./$types"
+<script lang="ts">
+	import type { PageServerLoad } from './$types';
 
-	let { data }: { data: PageServerLoad } = $props()
+	let { data }: { data: PageServerLoad } = $props();
 </script>
 
 {#snippet blog(data)}

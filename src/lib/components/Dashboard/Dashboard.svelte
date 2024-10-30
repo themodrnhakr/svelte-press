@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { children, widgets, head, foot, widget, name } = $props()
+	let { children, widgets, head, foot, widget, name } = $props();
 </script>
 
 <div class="wrapper">

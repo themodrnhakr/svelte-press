@@ -1,9 +1,8 @@
 <script>
-	import '/src/app.css'
+	import '/src/app.css';
 </script>
 
-<nav>
-</nav>
+<nav></nav>
 
 <slot />
 

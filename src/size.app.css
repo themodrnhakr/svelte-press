@@ -1,9 +1,9 @@
 :root {
 	--std-screen: 1440px;
 	--vu: max(1.11111vw, 1.0582vh);
-	--vpx: max(0px, calc(1vw - var(--std-screen)/100));
+	--vpx: max(0px, calc(1vw - var(--std-screen) / 100));
 
-	--unit: clamp(14px, calc(var(--vu) - var(--vpx)/2.52), 20px);
+	--unit: clamp(14px, calc(var(--vu) - var(--vpx) / 2.52), 20px);
 
 	--text-body: 14pt;
 	font-size: var(--unit);

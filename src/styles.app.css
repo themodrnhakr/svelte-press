@@ -1,11 +1,11 @@
 .text {
-	font-family: "Montserrat";
+	font-family: 'Montserrat';
 	font-size: 1rem;
 }
 
 .title {
 	--title-size: min(calc(2rem + var(--vu) + var(--vpx)), 100px);
-	font-family: "Montserrat";
+	font-family: 'Montserrat';
 	font-weight: 300;
 	font-size: var(--title-size);
 	text-transform: lowercase;
@@ -13,37 +13,39 @@
 }
 
 .subtitle {
-	--subtitle-size: min(calc(1rem + var(--vu) + var(--vpx)*0.5), 80px);
-	font-family: "Montserrat";
+	--subtitle-size: min(calc(1rem + var(--vu) + var(--vpx) * 0.5), 80px);
+	font-family: 'Montserrat';
 	font-weight: 700;
 	font-size: var(--subtitle-size);
-	line-height: calc(var(--subtitle-size)/0.75);
+	line-height: calc(var(--subtitle-size) / 0.75);
 }
 
 .author {
-	--author-size: min(calc(1.18rem + var(--vu)/2 + var(--vpx)), 40px);
-	font-family: "Montserrat";
+	--author-size: min(calc(1.18rem + var(--vu) / 2 + var(--vpx)), 40px);
+	font-family: 'Montserrat';
 	font-weight: 400;
 	font-size: var(--author-size);
 	font-style: italic;
 }
 
-h1.heading, .heading1 {
-	--heading1-size: min(calc(1rem + var(--vu)/1.5 + var(--vpx)), 36px);
-	font-family: "Montserrat";
+h1.heading,
+.heading1 {
+	--heading1-size: min(calc(1rem + var(--vu) / 1.5 + var(--vpx)), 36px);
+	font-family: 'Montserrat';
 	font-weight: 700;
 	font-size: var(--heading1-size);
 	text-transform: lowercase;
 }
 
-h2.heading, .heading2 {
-	--heading1-size: min(calc(1rem + var(--vu)/2.5 + var(--vpx)), 28px);
-	font-family: "Montserrat";
+h2.heading,
+.heading2 {
+	--heading1-size: min(calc(1rem + var(--vu) / 2.5 + var(--vpx)), 28px);
+	font-family: 'Montserrat';
 	font-weight: 500;
 	font-size: var(--heading1-size);
 	font-style: italic;
 }
 
-h3.heading, .heading3 {
-
+h3.heading,
+.heading3 {
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { enhance } from "$app/forms"
+	import { enhance } from '$app/forms';
 </script>
 
 <h1 class="title">Sign Up</h1>
@@ -8,5 +8,5 @@
 	<input type="email" name="email" id="email" /><br />
 	<label for="password" class="heading1">password</label>
 	<input type="password" name="password" id="password" /><br />
-	<button  class="heading2">Continue</button>
+	<button class="heading2">Continue</button>
 </form>

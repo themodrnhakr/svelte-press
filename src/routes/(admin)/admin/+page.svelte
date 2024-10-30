@@ -1,100 +1,97 @@
 <script lang="ts">
-	import Dashboard from "$lib/components/Dashboard/Dashboard.svelte"
-	import Widget from "$lib/components/Widget/Widget.svelte"
-	import WidgetsReference from "$lib/components/Widget/WidgetsReference.svelte"
-	import Modal from "$lib/components/Modal/Modal.svelte"
+	import Dashboard from '$lib/components/Dashboard/Dashboard.svelte';
+	import Widget from '$lib/components/Widget/Widget.svelte';
+	import WidgetsReference from '$lib/components/Widget/WidgetsReference.svelte';
+	import Modal from '$lib/components/Modal/Modal.svelte';
 
 	let modalVisible = false;
-	let modalInfo = {}
-	const firstName = "Eric"
+	let modalInfo = {};
+	const firstName = 'Eric';
 
 	function modalToggle(item) {
-		if (item.name === modalInfo.name)
-			return;
+		if (item.name === modalInfo.name) return;
 		modalInfo = item;
 		modalVisible = true;
 	}
 
 	const widgets = [
-		{ 
-			name: "article-count",
+		{
+			name: 'article-count',
 			properties: {
-					size: 1,
-					style: "simple number",
-				}
+				size: 1,
+				style: 'simple number'
+			}
 		},
-		{ 
-			name: "article-count-published",
+		{
+			name: 'article-count-published',
 			properties: {
-					size: 1
-				}
+				size: 1
+			}
 		},
-		{ 
-			name: "article-count-draft",
+		{
+			name: 'article-count-draft',
 			properties: {
-					size: 1
-				}
+				size: 1
+			}
 		},
-		{ 
-			name: "article-count-all",
+		{
+			name: 'article-count-all',
 			properties: {
-					size: 2
-				}
+				size: 2
+			}
 		},
-		{ 
-			name: "article-list",
+		{
+			name: 'article-list',
 			properties: {
-					size: 4
-				}
+				size: 4
+			}
 		},
-		{ 
-			name: "user-count",
+		{
+			name: 'user-count',
 			properties: {
-					size: 1
-				}
+				size: 1
+			}
 		},
-		{ 
-			name: "user-count-active",
+		{
+			name: 'user-count-active',
 			properties: {
-					size: 1
-				}
+				size: 1
+			}
 		},
-		{ 
-			name: "user-list",
+		{
+			name: 'user-list',
 			properties: {
-					size: 4
-				}
+				size: 4
+			}
 		},
-		{ 
-			name: "article-views",
+		{
+			name: 'article-views',
 			properties: {
-					size: 1
-				}
+				size: 1
+			}
 		},
-		{ 
-			name: "",
+		{
+			name: '',
 			properties: {
-					size: 2
-				}
+				size: 2
+			}
 		},
-		{ 
-			name: "apple",
+		{
+			name: 'apple',
 			properties: {
-					size: 2
-				}
-		},
-	]
+				size: 2
+			}
+		}
+	];
 </script>
 
 <Dashboard name={firstName} {widgets}>
 	<Widget />
 
 	{#snippet head()}
-
 		<Modal title="Widget Reference" description="false">
 			<WidgetsReference {widgets} />
 		</Modal>
-
 	{/snippet}
 
 	{#snippet widget(items)}

@@ -1,7 +1,5 @@
 <script lang="ts">
-	let { settings } = $props()
+	let { settings } = $props();
 </script>
 
-<div>
-	test
-</div>
+<div>test</div>
