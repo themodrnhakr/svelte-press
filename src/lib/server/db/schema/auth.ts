@@ -1,5 +1,5 @@
 import { text, integer, sqliteTable } from 'drizzle-orm/sqlite-core';
-import { relations } from 'drizzle-orm';
+import { relations, type InferSelectModel } from 'drizzle-orm';
 
 export const users = sqliteTable('users', {
 	id: text('id').primaryKey(),
@@ -12,7 +12,7 @@ export const sessions = sqliteTable('sessions', {
 	userId: text('user_id')
 		.notNull()
 		.references(() => users.id),
-	expiresAt: integer('expires_at').notNull()
+	expiresAt: integer('expires_at', { mode: 'timestamp' }).notNull()
 });
 
 export const usersRelations = relations(users, ({ many }) => ({
@@ -25,3 +25,6 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
 		references: [users.id]
 	})
 }));
+
+export type User = InferSelectModel<typeof users>;
+export type Session = InferSelectModel<typeof sessions>;
