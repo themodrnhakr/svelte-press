@@ -8,7 +8,7 @@
 	<h2><a href="/blog">Blog</a></h2>
 	<h2><a href="/posts-test">Test-Post</a></h2>
 	{#if dev}
-	<h2><a href="/admin/theme/playground">Theme Playground</a></h2>
+		<h2><a href="/admin/theme/playground">Theme Playground</a></h2>
 	{/if}
 </nav>
 
