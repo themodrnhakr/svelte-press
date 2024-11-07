@@ -3,8 +3,10 @@ import { relations, type InferSelectModel } from 'drizzle-orm';
 
 export const users = sqliteTable('users', {
 	id: text('id').primaryKey(),
+	username: text('username'),
 	email: text('email').unique(),
-	passwordHash: text('password_hash')
+	passwordHash: text('password_hash'),
+	githubId: integer('github_id')
 });
 
 export const sessions = sqliteTable('sessions', {

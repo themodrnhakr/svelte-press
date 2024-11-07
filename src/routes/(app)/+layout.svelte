@@ -1,15 +1,22 @@
 <script>
 	import { dev } from '$app/environment';
 	import '/src/app.css';
+
+	let { data } = $props();
+	console.log(data);
+	console.log(data.username ? 'hover' : false);
 </script>
 
 <nav>
+	<h1>Welcome{data.username ? `, ${data.username}` : ''}!</h1>
 	<h2><a href="/">Home</a></h2>
 	<h2><a href="/blog">Blog</a></h2>
 	<h2><a href="/posts-test">Test-Post</a></h2>
 	{#if dev}
 		<h2><a href="/admin/theme/playground">Theme Playground</a></h2>
 	{/if}
+	<h2><a data-sveltekit-reload={data.username ? false : true} href="/admin">Admin Portal</a></h2>
+	<h2><a href="/login">Login</a></h2>
 </nav>
 
 {#if dev}

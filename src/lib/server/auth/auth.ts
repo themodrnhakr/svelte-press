@@ -30,10 +30,11 @@ export function buildSession(token: string, userId: string): Session {
 }
 
 export async function createSession(
+	token: string,
 	userId: string,
 	builder: (token: string, userId: string) => Session
 ): Promise<Session> {
-	const session = builder(generateSessionToken(), userId);
+	const session = builder(token, userId);
 	try {
 		await db.insert(sessions).values(session);
 		return session;
