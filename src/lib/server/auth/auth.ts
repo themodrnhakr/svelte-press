@@ -35,10 +35,12 @@ export async function createSession(
 	builder: (token: string, userId: string) => Session
 ): Promise<Session> {
 	const session = builder(token, userId);
+	console.log(session);
 	try {
 		await db.insert(sessions).values(session);
 		return session;
 	} catch (error) {
+		logger.error('There was an error creating the user session');
 		throw error;
 	}
 }

@@ -46,14 +46,12 @@ export async function GET(event: RequestEvent): Promise<Response> {
 	const githubUserId = githubUser.id;
 	const githubUserName = githubUser.login;
 
-	console.log('HERE');
-	const existingUser = await db.select().from(users).where(eq(users.id, githubUserId));
-	console.log('THERE');
+	const existingUser = await db.select().from(users).where(eq(users.githubId, githubUserId));
 
 	if (existingUser[0]) {
 		const sessionToken = generateSessionToken();
-		const session = createSession(sessionToken, generateUserId(), buildSession);
-		setSessionTokenCookie(event, sessionToken, (await session).expiresAt);
+		const session = await createSession(sessionToken, existingUser[0].id, buildSession);
+		setSessionTokenCookie(event, sessionToken, session.expiresAt);
 		return new Response(null, {
 			status: 302,
 			headers: {
