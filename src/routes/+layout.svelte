@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { startTheme } from '$lib/theme/init.svelte'
-	import craftTheme from '$lib/theme/crafter.svelte'
-	import { theme } from "$lib/theme/bucket/default/index.svelte"
+	import { startTheme } from '$lib/theme/init.svelte';
+	import craftTheme from '$lib/theme/crafter.svelte';
+	import { theme } from '$lib/theme/bucket/default/index.svelte';
 
 	onMount(() => {
-		console.log("worked")	
-		startTheme(craftTheme(theme))
-	})
+		console.log('worked');
+		startTheme(craftTheme(theme));
+	});
 </script>
 
 <slot />

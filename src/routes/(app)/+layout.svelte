@@ -3,8 +3,6 @@
 	import '/src/app.css';
 
 	let { data } = $props();
-	console.log(data);
-	console.log(data.username ? 'hover' : false);
 </script>
 
 <nav>
@@ -16,7 +14,15 @@
 		<h2><a href="/admin/theme/playground">Theme Playground</a></h2>
 	{/if}
 	<h2><a data-sveltekit-reload={data.username ? false : true} href="/admin">Admin Portal</a></h2>
-	<h2><a href="/login">Login</a></h2>
+	{#if !data.username}
+		<h2><button><a href="/login">Login</a></button></h2>
+	{:else}
+		<h2>
+			<form method="post" action="/">
+				<button>Logout</button>
+			</form>
+		</h2>
+	{/if}
 </nav>
 
 {#if dev}

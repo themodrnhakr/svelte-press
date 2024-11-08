@@ -1,4 +1,5 @@
 import { dev } from '$app/environment';
+import { DATABASE_URL, GITHUB_CLIENT_ID } from '$env/static/private';
 import {
 	deleteSessionTokenCookie,
 	setSessionTokenCookie,
