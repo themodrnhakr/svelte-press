@@ -1,3 +1,4 @@
+import { dev } from '$app/environment';
 import {
 	deleteSessionTokenCookie,
 	setSessionTokenCookie,
@@ -26,9 +27,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		result = await resolve(event);
 	}
 
-	console.log(event.locals.user);
-	if (event.route.id === '/(admin)/admin' && event.locals.user === null) {
-		console.log('no user');
+	if (event.route.id === '/(admin)/admin' && event.locals.user === null && !dev) {
 		throw redirect(302, '/');
 	}
 
